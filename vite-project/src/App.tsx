@@ -1,5 +1,14 @@
 import "./App.css";
 import { Table } from "antd";
+import type {ColumnsType} from "antd/es/table"
+
+interface DataType {
+  key: string;
+  name: string;
+  age: number;
+  address: string;
+  tags: string[];
+}
 
 const dataSource = [
   {
@@ -16,7 +25,7 @@ const dataSource = [
   },
 ];
 
-const columns = [
+const columns: ColumnsType<DataType> = [
   {
     title: "Name",
     dataIndex: "name",
